@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilo Boostrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Estilos CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Estilo icono -->
+ <link rel="shortcut icon" type="" href="./icon.jpeg">
+
+    <title>Domina las Matemáticas</title>
+    
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+          <img src="logo.png" alt="Logo">          
+          <a class="logoTexto" href="./index.html">Matemáticas para Niños</a>
+        </div>
+        <div class="toggle-menu" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="./contar.html">Contar</a></li>
+          <li><a href="./sumas.html">Sumas</a></li>
+          <li><a href="#">Formas y Espacios</a></li>
+          <li><a href="#">Patrones y Secuencias</a></li>
+          <li><a href="#">Medición y Tamaño</a></li>
+          <li><a href="#">Tiempo</a></li>
+          
+        </ul>
+      </header>
+
+      <!-- SUMAS -->
+
+    <div class="container text-center mt-5">
+        <p id="question" class="h2 mb-4 text-primary my-4">SELECCIONA LOS NÚMEROS CON LOS QUE DESEAS HACER SUMAS..</p>
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <img src="./1a10.png" alt="Imagen 1" class="img-fluid clickImg" id="img1">
+            </div>
+            <div class="col-4">
+                <img src="./1a20.png" alt="Imagen 2" class="img-fluid clickable clickImg" id="img2">
+            </div>
+            <div class="col-4">
+                <img src="./1a100.png" alt="Imagen 3" class="img-fluid clickable clickImg" id="img3">
+            </div>
+        </div>
+
+        <p id="question" class="h2 mb-4 text-primary my-4">¿CUÁNTO ES:</p>
+        <div id="result" class="mt-4 h3 display-1 text-success"></div>
+        <div id="options" class="mt-2"></div>
+        <div id="feedback" class="feedback"></div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
