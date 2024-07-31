@@ -94,6 +94,8 @@ body {
   animation: rotate 10s linear infinite;
 }
 
+
+
 #options-container {
   margin-top: 20px; /* Add some space above */
 }
@@ -124,27 +126,23 @@ body {
   font-weight: bold;
 }
 
-/* ---- */
-
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      background: linear-gradient(to bottom, #0000FF, #00FFFF);
-    }
-    .nav-links.active {
-      display: flex;
-    }
-    .toggle-menu {
-      display: block;
-    }
-    .nav-links li {
-      margin: 10px 0;
-    }
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: linear-gradient(to bottom, #0000FF, #00FFFF);
   }
-
-
+  .nav-links.active {
+    display: flex;
+  }
+  .toggle-menu {
+    display: block;
+  }
+  .nav-links li {
+    margin: 10px 0;
+  }
+}

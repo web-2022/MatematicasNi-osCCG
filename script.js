@@ -76,9 +76,11 @@ document.querySelectorAll('.clickImg').forEach(function(image) {
 //.....Fin de SUMAS
 
 //CONTAR-PELOTAS
-document.getElementById('generate-btn').addEventListener('click', generateBalls);
+document.getElementById('generate-btn-10').addEventListener('click', () => generateBalls(10));
+document.getElementById('generate-btn-20').addEventListener('click', () => generateBalls(20));
+document.getElementById('generate-btn-30').addEventListener('click', () => generateBalls(30));
 
-function generateBalls() {
+function generateBalls(maxBalls) {
   const ballContainer = document.getElementById('ball-container');
   const optionsContainer = document.getElementById('options');
   const resultContainer = document.getElementById('result');
@@ -87,23 +89,23 @@ function generateBalls() {
   optionsContainer.innerHTML = ''; // Clear existing options
   resultContainer.innerHTML = ''; // Clear existing result message
   
-  const numBalls = Math.floor(Math.random() * 10) + 1; // Random number between 1 and 10
+  const numBalls = Math.floor(Math.random() * maxBalls) + 1; // Random number between 1 and maxBalls
   const rows = 3; // Number of rows
   const ballsPerRow = Math.ceil(numBalls / rows); // Number of balls per row
 
   for (let i = 0; i < numBalls; i++) {
     const ball = document.createElement('div');
     ball.className = 'ball';
-    ball.style.width = '60px'; // Fixed size for uniformity
-    ball.style.height = '60px'; // Fixed size for uniformity
+    ball.style.width = '40px'; // Fixed size for uniformity
+    ball.style.height = '40px'; // Fixed size for uniformity
 
     // Calculate position in grid
     const row = Math.floor(i / ballsPerRow);
     const column = i % ballsPerRow;
 
     // Adjust position and size
-    ball.style.top = `${row * 80}px`; // 80px gap between rows
-    ball.style.left = `${column * 80}px`; // 80px gap between columns
+    ball.style.top = `${row * 60}px`; // 80px gap between rows
+    ball.style.left = `${column * 60}px`; // 80px gap between columns
 
     ballContainer.appendChild(ball);
   }
@@ -113,7 +115,7 @@ function generateBalls() {
   const options = new Set();
 
   while (options.size < 4) {
-    const randomOption = Math.floor(Math.random() * 10) + 1;
+    const randomOption = Math.floor(Math.random() * maxBalls) + 1;
     options.add(randomOption);
   }
 
@@ -135,7 +137,7 @@ function generateBalls() {
         resultContainer.style.color = '#007bff'; // Use the same color as the buttons
         
         // Generate new balls after 3 seconds
-        setTimeout(generateBalls, 3000);
+        setTimeout(() => generateBalls(maxBalls), 3000);
       } else {
         resultContainer.textContent = 'Intenta de nuevo.';
         resultContainer.style.color = '#007bff'; // Use the same color as the buttons
